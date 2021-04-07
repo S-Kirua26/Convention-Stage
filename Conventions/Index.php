@@ -27,7 +27,6 @@ $routes=[
 	"ActionConnexion" => ["PHP/VIEW/", "ActionConnexion", "Identification",false],
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification",false],
 	"FormAdmin" => ["PHP/VIEW/", "FormAdmin", "Identification",false],
-	"InterfaceFormateur" => ["PHP/VIEW/", "InterfaceFormateur", "Gestion des stages",false],
 	
 	/**** MENU ****/
 	"MenuFR" => ["PHP/VIEW/", "MenuFR", "Choisissez la catégorie a compléter :",false],
@@ -48,14 +47,6 @@ $routes=[
 	"ConventionPdf" => ["PHP/VIEW/", "ConventionPdf", "Identification",false],
 	
 	/***** CRUD ****/
-	"ListeFormations" => ["PHP/VIEW/", "ListeFormations", "Gestion des formations",false],
-	"FormFormation" => ["PHP/VIEW/", "FormFormation", "Gestion des formations",false],
-	"ActionFormation" => ["PHP/VIEW/", "ActionFormation", "Gestion des formations",false],
-
-	"ListeSessions" => ["PHP/VIEW/", "ListeSessions", "Gestion des offres",false],
-	"FormSession" => ["PHP/VIEW/", "FormSession", "Gestion des offres",false],
-	"FormPeriode" => ["PHP/VIEW/", "FormPeriode", "Gestion des périodes",false],
-	"ActionSession" => ["PHP/VIEW/", "ActionSession", "Gestion des offres",false],
 
 	"ListeUtilisateurs" => ["PHP/VIEW/", "ListeUtilisateurs", "Gestion des Utilisateurs",false],
 	"FormUtilisateur" => ["PHP/VIEW/", "FormUtilisateur", "Gestion des Utilisateurs",false],
@@ -74,7 +65,6 @@ $routes=[
 	/**** API ****/
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
 	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Gestion des Entreprises",true],
-	"SessionAPI"=>["PHP/MODEL/API/","SessionAPI","Accueil",true],
 	"ListeStagiairesAPI"=>["PHP/MODEL/API/","ListeStagiairesAPI","Accueil",true],
 	"GetObjectifAPI"=>["PHP/MODEL/API/","GetObjectifAPI","Accueil",true],
 	"SetObjectifAPI"=>["PHP/MODEL/API/","SetObjectifAPI","Accueil",true],
