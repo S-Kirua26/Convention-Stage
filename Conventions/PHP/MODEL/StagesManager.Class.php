@@ -5,27 +5,16 @@ class StagesManager
     public static function add(Stages $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Stages (etape,dateVisite,nomVisiteur,lieuRealisation,deplacement,frequenceDeplacement,modeDeplacement,attFormReglement,libelleAttFormReg,visiteMedical,travauxDang,dateDeclarationDerog,sujetStage,travauxRealises,objectifPAE,dateDebut,dateFin,idTuteur,idStagiaire,idPeriode) VALUES (:etape,:dateVisite,:nomVisiteur,:lieuRealisation,:deplacement,:frequenceDeplacement,:modeDeplacement,:attFormReglement,:libelleAttFormReg,:visiteMedical,:travauxDang,:dateDeclarationDerog,:sujetStage,:travauxRealises,:objectifPAE,:dateDebut,:dateFin,:idTuteur,:idStagiaire,:idPeriode)");
+        $q = $db->prepare("INSERT INTO Stages (etape,dateVisite,nomVisiteur,travauxRealises,objectifPAE,dateDebut,dateFin,idTuteur,idStagiaire) VALUES (:etape,:dateVisite,:nomVisiteur,:travauxRealises,:objectifPAE,:dateDebut,:dateFin,:idTuteur,:idStagiaire)");
         $q->bindValue(":etape", $obj->getEtape());
         $q->bindValue(":dateVisite", $obj->getDateVisite());
-        $q->bindValue(":nomVisiteur", $obj->getNomVisiteur());
-        $q->bindValue(":lieuRealisation", $obj->getLieuRealisation());
-        $q->bindValue(":deplacement", $obj->getDeplacement());
-        $q->bindValue(":frequenceDeplacement", $obj->getFrequenceDeplacement());
-        $q->bindValue(":modeDeplacement", $obj->getModeDeplacement());
-        $q->bindValue(":attFormReglement", $obj->getAttFormReglement());
-        $q->bindValue(":libelleAttFormReg", $obj->getLibelleAttFormReg());
-        $q->bindValue(":visiteMedical", $obj->getVisiteMedical());
-        $q->bindValue(":travauxDang", $obj->getTravauxDang());
-        $q->bindValue(":dateDeclarationDerog", $obj->getDateDeclarationDerog());
-        $q->bindValue(":sujetStage", $obj->getSujetStage());
+        $q->bindValue(":nomVisiteur", $obj->getNomVisiteur());;
         $q->bindValue(":travauxRealises", $obj->getTravauxRealises());
         $q->bindValue(":objectifPAE", $obj->getObjectifPAE());
         $q->bindValue(":dateDebut", $obj->getDateDebut());
         $q->bindValue(":dateFin", $obj->getDateFin());
         $q->bindValue(":idTuteur", $obj->getIdTuteur());
         $q->bindValue(":idStagiaire", $obj->getIdStagiaire());
-        $q->bindValue(":idPeriode", $obj->getIdPeriode());
         $q->execute();
     }
 
@@ -37,23 +26,12 @@ class StagesManager
         $q->bindValue(":etape", $obj->getEtape());
         $q->bindValue(":dateVisite", $obj->getDateVisite());
         $q->bindValue(":nomVisiteur", $obj->getNomVisiteur());
-        $q->bindValue(":lieuRealisation", $obj->getLieuRealisation());
-        $q->bindValue(":deplacement", $obj->getDeplacement());
-        $q->bindValue(":frequenceDeplacement", $obj->getFrequenceDeplacement());
-        $q->bindValue(":modeDeplacement", $obj->getModeDeplacement());
-        $q->bindValue(":attFormReglement", $obj->getAttFormReglement());
-        $q->bindValue(":libelleAttFormReg", $obj->getLibelleAttFormReg());
-        $q->bindValue(":visiteMedical", $obj->getVisiteMedical());
-        $q->bindValue(":travauxDang", $obj->getTravauxDang());
-        $q->bindValue(":dateDeclarationDerog", $obj->getDateDeclarationDerog());
-        $q->bindValue(":sujetStage", $obj->getSujetStage());
         $q->bindValue(":travauxRealises", $obj->getTravauxRealises());
         $q->bindValue(":objectifPAE", $obj->getObjectifPAE());
         $q->bindValue(":dateDebut", $obj->getDateDebut());
         $q->bindValue(":dateFin", $obj->getDateFin());
         $q->bindValue(":idTuteur", $obj->getIdTuteur());
         $q->bindValue(":idStagiaire", $obj->getIdStagiaire());
-        $q->bindValue(":idPeriode", $obj->getIdPeriode());
         $q->execute();
     }
     public static function delete(Stages $obj)

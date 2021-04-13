@@ -3,7 +3,7 @@
 if ($_SESSION['utilisateur']->getIdRole() == 3) {
     $tuteur = TuteursManager::getByEmail($_SESSION['utilisateur']->getEmailUtilisateur());
     $stages = StagesManager::getByTuteur($tuteur->getIdTuteur());
-    // var_dump($stages);
+    
     if (count($stages) > 1) {
         $_SESSION["plusieursStagiaires"]="oui";
         for ($i = 0; $i < count($stages); $i++) {

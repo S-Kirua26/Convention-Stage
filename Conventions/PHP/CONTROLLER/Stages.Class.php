@@ -9,23 +9,12 @@ class Stages
 	private $_etape;
 	private $_dateVisite;
 	private $_nomVisiteur;
-	private $_lieuRealisation;
-	private $_deplacement;
-	private $_frequenceDeplacement;
-	private $_modeDeplacement;
-	private $_attFormReglement;
-	private $_libelleAttFormReg;
-	private $_visiteMedical;
-	private $_travauxDang;
-	private $_dateDeclarationDerog;
-	private $_sujetStage;
 	private $_travauxRealises;
 	private $_objectifPAE;
 	private $_dateDebut;
 	private $_dateFin;
 	private $_idTuteur;
 	private $_idStagiaire;
-	private $_idPeriode;
 
 	/***************** Accesseurs ***************** */
 
@@ -68,106 +57,6 @@ class Stages
 	public function setNomVisiteur($nomVisiteur)
 	{
 		$this->_nomVisiteur=$nomVisiteur;
-	}
-
-	public function getLieuRealisation()
-	{
-		return $this->_lieuRealisation;
-	}
-
-	public function setLieuRealisation($lieuRealisation)
-	{
-		$this->_lieuRealisation=$lieuRealisation;
-	}
-
-	public function getDeplacement()
-	{
-		return $this->_deplacement;
-	}
-
-	public function setDeplacement($deplacement)
-	{
-		$this->_deplacement=$deplacement;
-	}
-
-	public function getFrequenceDeplacement()
-	{
-		return $this->_frequenceDeplacement;
-	}
-
-	public function setFrequenceDeplacement($frequenceDeplacement)
-	{
-		$this->_frequenceDeplacement=$frequenceDeplacement;
-	}
-
-	public function getModeDeplacement()
-	{
-		return $this->_modeDeplacement;
-	}
-
-	public function setModeDeplacement($modeDeplacement)
-	{
-		$this->_modeDeplacement=$modeDeplacement;
-	}
-
-	public function getAttFormReglement()
-	{
-		return $this->_attFormReglement;
-	}
-
-	public function setAttFormReglement($attFormReglement)
-	{
-		$this->_attFormReglement=$attFormReglement;
-	}
-
-	public function getLibelleAttFormReg()
-	{
-		return $this->_libelleAttFormReg;
-	}
-
-	public function setLibelleAttFormReg($libelleAttFormReg)
-	{
-		$this->_libelleAttFormReg=$libelleAttFormReg;
-	}
-
-	public function getVisiteMedical()
-	{
-		return $this->_visiteMedical;
-	}
-
-	public function setVisiteMedical($visiteMedical)
-	{
-		$this->_visiteMedical=$visiteMedical;
-	}
-
-	public function getTravauxDang()
-	{
-		return $this->_travauxDang;
-	}
-
-	public function setTravauxDang($travauxDang)
-	{
-		$this->_travauxDang=$travauxDang;
-	}
-
-	public function getDateDeclarationDerog()
-	{
-		return $this->_dateDeclarationDerog;
-	}
-
-	public function setDateDeclarationDerog($dateDeclarationDerog)
-	{
-		$this->_dateDeclarationDerog=$dateDeclarationDerog;
-	}
-
-	public function getSujetStage()
-	{
-		return $this->_sujetStage;
-	}
-
-	public function setSujetStage($sujetStage)
-	{
-		$this->_sujetStage=$sujetStage;
 	}
 
 	public function getTravauxRealises()
@@ -229,15 +118,6 @@ class Stages
 	{
 		$this->_idStagiaire=$idStagiaire;
 	}	
-	public function getIdPeriode()
-	{
-		return $this->_idPeriode;
-	}
-
-	public function setIdPeriode($idPeriode)
-	{
-		$this->_idPeriode = $idPeriode;
-	}
 
 	/*****************Constructeur***************** */
 
@@ -269,7 +149,7 @@ class Stages
 	*/
 	public function toString()
 	{
-		return "IdStage : ".$this->getIdStage()."Etape : ".$this->getEtape()."DateVisite : ".$this->getDateVisite()."NomVisiteur : ".$this->getNomVisiteur()."LieuRealisation : ".$this->getLieuRealisation()."Deplacement : ".$this->getDeplacement()."FrequenceDeplacement : ".$this->getFrequenceDeplacement()."ModeDeplacement : ".$this->getModeDeplacement()."AttFormReglement : ".$this->getAttFormReglement()."LibelleAttFormReg : ".$this->getLibelleAttFormReg()."VisiteMedical : ".$this->getVisiteMedical()."TravauxDang : ".$this->getTravauxDang()."DateDeclarationDerog : ".$this->getDateDeclarationDerog()."SujetStage : ".$this->getSujetStage()."TravauxRealises : ".$this->getTravauxRealises()."ObjectifPAE : ".$this->getObjectifPAE()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdTuteur : ".$this->getIdTuteur()."IdStagiaire : ".$this->getIdStagiaire()."\n";
+		return "IdStage : ".$this->getIdStage()."Etape : ".$this->getEtape()."DateVisite : ".$this->getDateVisite()."NomVisiteur : ".$this->getNomVisiteur()."TravauxRealises : ".$this->getTravauxRealises()."ObjectifPAE : ".$this->getObjectifPAE()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdTuteur : ".$this->getIdTuteur()."IdStagiaire : ".$this->getIdStagiaire()."\n";
 	}
 
 

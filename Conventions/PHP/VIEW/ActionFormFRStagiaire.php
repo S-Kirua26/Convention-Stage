@@ -6,8 +6,8 @@ $tuteur = new Tuteurs($_POST);
 TuteursManager::add($tuteur);
 $recupTuteur = TuteursManager::getByEmail($tuteur->getEmailTuteur());
 
-$idPeriode = $_POST['idPeriode'];
-$periode = PeriodesStagesManager::findById($idPeriode);
+// $idPeriode = $_POST['idPeriode'];
+// $periode = PeriodesStagesManager::findById($idPeriode);
 $stage = new Stages($_POST);
 $stage->setIdTuteur($recupTuteur->getIdTuteur());
 $stage->setEtape(1);
