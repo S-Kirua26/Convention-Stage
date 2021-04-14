@@ -5,19 +5,33 @@ DROP DATABASE IF EXISTS conventionsStage;
 CREATE DATABASE IF NOT EXISTS `conventionsStage` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `conventionsStage`;
 
+DROP TABLE IF EXISTS 'animations'
 DROP TABLE IF EXISTS `departements`;
 DROP TABLE IF EXISTS `entreprises`;
 DROP TABLE IF EXISTS `evaluations`;
+DROP TABLE IF EXISTS `formations`;
 DROP TABLE IF EXISTS `libellesComportementsProfessionnels`;
 DROP TABLE IF EXISTS `regions`;
 DROP TABLE IF EXISTS `roles`;
 DROP TABLE IF EXISTS `stages`;
 DROP TABLE IF EXISTS `stagiaires`;
+DROP TABLE IF EXISTS `stagiairesformation`;
 DROP TABLE IF EXISTS `tuteurs`;
 DROP TABLE IF EXISTS `utilisateurs`;
 DROP TABLE IF EXISTS `valeursAcquis`;
 DROP TABLE IF EXISTS `valeursComportementsProfessionnels`;
 DROP TABLE IF EXISTS `villes`;
+
+#------------------------------------------------------------
+# Table: Animations
+#------------------------------------------------------------
+
+CREATE TABLE Animations
+(
+    `idAnimation` INT Auto_increment NOT NULL PRIMARY KEY,
+    `idUtilisateur`  INT NOT NULL,
+    `idFormation` INT NOT NULL 
+)ENGINE=InnoDB, CHARSET = UTF8; 
 
 #------------------------------------------------------------
 # Table: Departements
@@ -70,6 +84,17 @@ CREATE TABLE evaluations
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
+# Table: Formations
+#------------------------------------------------------------
+
+CREATE TABLE Formations(
+        idFormation      Int  Auto_increment  NOT NULL PRIMARY KEY,
+        libelleFormation Varchar (200) NOT NULL,
+        grn int(4) NOT NULL,
+        finaliteFormation Varchar (250) NOT NULL
+)ENGINE=InnoDB, CHARSET = UTF8;
+
+#------------------------------------------------------------
 # Table: LibellesComportementsProfessionnels
 #------------------------------------------------------------
 
@@ -78,6 +103,19 @@ CREATE TABLE LibellesComportementsProfessionnels
     `idLibelleComportementProfessionnel`   Int  Auto_increment  NOT NULL PRIMARY KEY,
     `ordreComportement`                    INT NOT NULL , 
     `libelleComportement`                  VARCHAR(100) NOT NULL  
+)ENGINE=InnoDB, CHARSET = UTF8;
+
+#------------------------------------------------------------
+# Table: PeriodesStages
+#------------------------------------------------------------
+
+CREATE TABLE PeriodesStages(
+        idPeriode Int Auto_increment NOT NULL PRIMARY KEY ,
+        idSessionFormation Int NOT NULL ,
+        dateDebutPAE Date NOT NULL ,
+        dateFinPAE Date NOT NULL ,
+        dateRapportSuivi Date NOT NULL ,
+        objectifPAE Text NOT NULL
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
@@ -97,6 +135,19 @@ CREATE TABLE IF NOT EXISTS `regions` (
 CREATE TABLE Roles(
     `idRole`      Int  Auto_increment  NOT NULL PRIMARY KEY ,
     `libelleRole` Varchar (25) NOT NULL
+)ENGINE=InnoDB, CHARSET = UTF8;
+
+#------------------------------------------------------------
+# Table: SessionsFormations
+#------------------------------------------------------------
+
+CREATE TABLE SessionsFormations(
+        idSessionFormation Int  Auto_increment  NOT NULL PRIMARY KEY,
+        numOffreFormation  Int NOT NULL ,
+        idFormation        Int NOT NULL, 
+        dateDebut DATE NOT NULL, 
+        dateFin DATE NOT NULL
+   
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
@@ -202,7 +253,15 @@ CREATE TABLE Villes(
     `idDepartement` varchar(3)
 )ENGINE=InnoDB, CHARSET = UTF8;
 
+ALTER TABLE Animations
+ADD CONSTRAINT FK_Animation_Formations
+FOREIGN KEY (idFormation)
+REFERENCES Formations(idFormation);
 
+ALTER TABLE Animations
+ADD CONSTRAINT FK_Animation_Utilisateurs
+FOREIGN KEY (idUtilisateur)
+REFERENCES Utilisateurs(idUtilisateur);
 
 ALTER TABLE Departements
 ADD CONSTRAINT FK_Departements_Regions
@@ -215,6 +274,11 @@ ADD CONSTRAINT FK_Tuteurs_Entreprises
 FOREIGN KEY (idEntreprise)
 REFERENCES Entreprises(idEntreprise);
 
+ALTER TABLE SessionsFormations
+ADD CONSTRAINT FK_SessionFormation_Formations
+FOREIGN KEY (idFormation)
+REFERENCES Formations(idFormation);
+
 ALTER TABLE Stages
 ADD CONSTRAINT FK_Stages_Stagiaires
 FOREIGN KEY (idStagiaire)
@@ -225,11 +289,15 @@ ADD CONSTRAINT FK_Stages_Tuteurs
 FOREIGN KEY (idTuteur)
 REFERENCES Tuteurs(idTuteur);
 
-
 ALTER TABLE Utilisateurs
 ADD CONSTRAINT FK_Utilisateurs_Roles
 FOREIGN KEY (idRole)
 REFERENCES Roles(idRole);
+
+ALTER TABLE PeriodesStages
+ADD CONSTRAINT FK_PeriodesStages_SessionFormation
+FOREIGN KEY (idSessionFormation)
+REFERENCES SessionsFormations(idSessionFormation);
 
 ALTER TABLE Entreprises
 ADD CONSTRAINT FK_Entreprises_Villes
@@ -258,39 +326,34 @@ FOREIGN KEY (idVilleHabitation)
 REFERENCES Villes(idVille);
 
 
--- CREATE VIEW  stagiaireFormation as
--- SELECT
---     f.`idFormation`,
---     f.`libelleFormation`,
---     s.`idSessionFormation`,
---     s.`numOffreFormation`,
---     s.`dateDebut`,
---     s.`dateFin`,
---     p.`idPeriode`,
---     p.`dateDebutPAE`,
---     p.`dateFinPAE`,
---     p.`dateRapportSuivi`,
---     p.`objectifPAE`,
---     pa.`idParticipation`,
---     st.`idStagiaire`,
---     st.`genreStagiaire`,
---     st.`nomStagiaire`,
---     st.`prenomStagiaire`,
---     st.`numSecuStagiaire`,
---     st.`numBenefStagiaire`,
---     st.`dateNaissanceStagiaire`,
---     st.`emailStagiaire`
--- FROM
---     `formations` AS f
--- INNER JOIN sessionsformations AS s
--- ON
---     f.idFormation = s.idFormation
--- INNER JOIN periodesstages AS p
--- ON
---     s.idsessionFormation = p.idSessionFormation
--- INNER JOIN participations AS pa
--- ON
---     pa.idsessionFormation = s.idsessionFormation
--- INNER JOIN stagiaires AS st
--- ON
---     st.idStagiaire = pa.idStagiaire
+CREATE VIEW  stagiaireFormation as
+SELECT
+    f.`idFormation`,
+    f.`libelleFormation`,
+    s.`idSessionFormation`,
+    s.`numOffreFormation`,
+    s.`dateDebut`,
+    s.`dateFin`,
+    p.`idPeriode`,
+    p.`dateDebutPAE`,
+    p.`dateFinPAE`,
+    p.`dateRapportSuivi`,
+    p.`objectifPAE`,
+    st.`idStagiaire`,
+    st.`genreStagiaire`,
+    st.`nomStagiaire`,
+    st.`prenomStagiaire`,
+    st.`numSecuStagiaire`,
+    st.`numBenefStagiaire`,
+    st.`dateNaissanceStagiaire`,
+    st.`emailStagiaire`
+FROM
+    `formations` AS f
+INNER JOIN sessionsformations AS s
+ON
+    f.idFormation = s.idFormation
+INNER JOIN periodesstages AS p
+ON
+    s.idsessionFormation = p.idSessionFormation
+INNER JOIN stagiaires AS st
+

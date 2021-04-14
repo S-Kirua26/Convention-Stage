@@ -14,7 +14,6 @@ class StagiaireFormation
 	private $_dateFinPAE;
 	private $_dateRapportSuivi;
 	private $_objectifPAE;
-	private $_idParticipation;
 	private $_dateDebut;
 	private $_dateFin;
 	private $_idStagiaire;
@@ -117,16 +116,6 @@ class StagiaireFormation
 	public function setObjectifPAE($objectifPAE)
 	{
 		$this->_objectifPAE=$objectifPAE;
-	}
-
-	public function getIdParticipation()
-	{
-		return $this->_idParticipation;
-	}
-
-	public function setIdParticipation($idParticipation)
-	{
-		$this->_idParticipation=$idParticipation;
 	}
 
 	public function getDateDebut()
@@ -259,7 +248,7 @@ class StagiaireFormation
 	*/
 	public function toString()
 	{
-		return "IdFormation : ".$this->getIdFormation()."LibelleFormation : ".$this->getLibelleFormation()."IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."IdPeriode : ".$this->getIdPeriode()."DateDebutPAE : ".$this->getDateDebutPAE()."DateFinPAE : ".$this->getDateFinPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."ObjectifPAE : ".$this->getObjectifPAE()."IdParticipation : ".$this->getIdParticipation()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdStagiaire : ".$this->getIdStagiaire()."GenreStagiaire : ".$this->getGenreStagiaire()."NomStagiaire : ".$this->getNomStagiaire()."PrenomStagiaire : ".$this->getPrenomStagiaire()."NumSecuStagiaire : ".$this->getNumSecuStagiaire()."NumBenefStagiaire : ".$this->getNumBenefStagiaire()."DateNaissanceStagiaire : ".$this->getDateNaissanceStagiaire()."EmailStagiaire : ".$this->getEmailStagiaire()."\n";
+		return "IdFormation : ".$this->getIdFormation()."LibelleFormation : ".$this->getLibelleFormation()."IdSessionFormation : ".$this->getIdSessionFormation()."NumOffreFormation : ".$this->getNumOffreFormation()."IdPeriode : ".$this->getIdPeriode()."DateDebutPAE : ".$this->getDateDebutPAE()."DateFinPAE : ".$this->getDateFinPAE()."DateRapportSuivi : ".$this->getDateRapportSuivi()."ObjectifPAE : ".$this->getObjectifPAE()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdStagiaire : ".$this->getIdStagiaire()."GenreStagiaire : ".$this->getGenreStagiaire()."NomStagiaire : ".$this->getNomStagiaire()."PrenomStagiaire : ".$this->getPrenomStagiaire()."NumSecuStagiaire : ".$this->getNumSecuStagiaire()."NumBenefStagiaire : ".$this->getNumBenefStagiaire()."DateNaissanceStagiaire : ".$this->getDateNaissanceStagiaire()."EmailStagiaire : ".$this->getEmailStagiaire()."\n";
 	}
 
 

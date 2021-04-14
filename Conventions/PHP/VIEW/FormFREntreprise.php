@@ -3,8 +3,8 @@
 $id = $_GET["idEntreprise"];
 $entreprise = EntreprisesManager::findById($id);
 if($entreprise==null) $entreprise= new Entreprises();
-$idTuteur = $_GET["idTuteur"];
-$tuteur = TuteursManager::findById($idTuteur);
+// $idTuteur = $_GET["idTuteur"];
+// $tuteur = TuteursManager::findById($idTuteur);
 ?> 
     <form action="index.php?page=ActionEntreprise&mode=ajouter" method="POST">
         <fieldset>
@@ -164,7 +164,7 @@ $tuteur = TuteursManager::findById($idTuteur);
             </div>
         </div>
         </fieldset>
-
+<!-- 
         <div class="espaceHor"></div>
         <div class="espaceHor"></div>
 
@@ -217,7 +217,7 @@ $tuteur = TuteursManager::findById($idTuteur);
                 <div class="mini"></div>
                 <div class="info colonne"></div>
             </div>
-        </fieldset>
+        </fieldset> -->
 
         <div class="row">
             <div></div>

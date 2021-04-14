@@ -127,6 +127,14 @@ INSERT INTO `departements`  VALUES
 ('988', 'Nouvelle-Calédonie', 14),
 ('989', 'Clipperton', 14);
 
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,1,8);
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,2,4);
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,3,3);
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,4,2);
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,5,1);
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,6,5);
+INSERT INTO `animations`(`idAnimation`, `idUtilisateur`, `idFormation`) VALUES (NULL,6,6);
+
 INSERT INTO `entreprises`(`idEntreprise`, `raisonSociale`, `statutJuridiqueEnt`, `adresseEnt`, `numSiretEnt`, `telEnt`, `assureurEnt`, `numSocietaire`, `nomRepresentant`, `prenomRepresentant`, `fctRepresentant`, `telRepresentant`, `mailRepresentant`, `idVille`) VALUES (NULL,"Pellentesque Habitant Morbi Institute","EURL","7071 Suspendisse Road","81897909800006","0725101214","Et Malesuada Limited","7880782597146189","Hall","Ingrid","ouvrier ","0785101214","diam.Pellentesque.habitant@pretiumaliquetmetus.net",1);
 INSERT INTO `entreprises`(`idEntreprise`, `raisonSociale`, `statutJuridiqueEnt`, `adresseEnt`, `numSiretEnt`, `telEnt`, `assureurEnt`, `numSocietaire`, `nomRepresentant`, `prenomRepresentant`, `fctRepresentant`, `telRepresentant`, `mailRepresentant`, `idVille`) VALUES (NULL,"Ligula Limited","SARL","715-7324 Erat. Road","47906057600002","0621548774","Duis Dignissim Company","3556707340853576","Perez","Timon","secretaire ","0621548714","nisi.magna@Phasellusdolor.org",56);
 INSERT INTO `entreprises`(`idEntreprise`, `raisonSociale`, `statutJuridiqueEnt`, `adresseEnt`, `numSiretEnt`, `telEnt`, `assureurEnt`, `numSocietaire`, `nomRepresentant`, `prenomRepresentant`, `fctRepresentant`, `telRepresentant`, `mailRepresentant`, `idVille`) VALUES (NULL,"Eu Elit Nulla PC","EURL","870-3416 Vel Ave","82642455800003","0741526325","Curabitur LLC","1995715917806923","Ford","Kitra","developpeur ","0741521325","scelerisque.scelerisque@DonecnibhQuisque.net",41);
@@ -154,6 +162,18 @@ INSERT INTO `evaluations` (`idStage`,`dateEvaluation`,`objectifAcquisition`,`com
 INSERT INTO `evaluations` (`idStage`,`dateEvaluation`,`objectifAcquisition`,`comportementMt`,`satisfactionEnt`,`remarqueEnt`,`perspectiveEmb`) VALUES (5,"2021-04-21",1,2,1,"il est nul",1);
 INSERT INTO `evaluations` (`idStage`,`dateEvaluation`,`objectifAcquisition`,`comportementMt`,`satisfactionEnt`,`remarqueEnt`,`perspectiveEmb`) VALUES (6,"2021-02-14",3,1,2,"il est doué",2);
 
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"ADMINISTRATEUR D’INFRASTRUCTURES SÉCURISÉES", 111, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"INSTALLATEUR DE RÉSEAUX DE TÉLÉCOMMUNICATIONS", 112, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"CONNAÎTRE ET APPLIQUER LA MÉTHODE 5S", 113, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"AGENT DE FABRICATION D'ENSEMBLE MÉTALLIQUE", 114, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"CONDUCTEUR D'INSTALLATION ET DE MACHINES AUTOMATISÉES", 115, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"MÉCANICIEN DE MAINTENANCE AUTOMOBILE", 116, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"PARCOURS CRÉATEURS D'ENTREPRISE", 117, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"DÉVELOPPEUR WEB ET WEB MOBILE", 118, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"FLUIDES FRIGORIGÈNES : ATTESTATION D’APTITUDE CATÉGORIE I", 119, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"AUTOMATES SIEMENS S7 300 - S7 400 AVEC STEP7 : ASSURER LA MAINTENANCE RÉSEAU PARTIE 1", 120, "");
+INSERT INTO `formations`(`idFormation`, `libelleFormation`,grn,`finaliteFormation`) VALUES (NULL,"FORMATION PRÉPARATOIRE AUX FORMATIONS DU TERTIAIRE NIVEAU V", 121, "");
+
 INSERT INTO `Libellescomportementsprofessionnels`(`idLibellecomportementprofessionnel`, `ordreComportement`, `libelleComportement`) VALUES (NULL,1,"Ponctualité, respect des horaires et de la durée de travail ");
 INSERT INTO `Libellescomportementsprofessionnels`(`idLibellecomportementprofessionnel`, `ordreComportement`, `libelleComportement`) VALUES (NULL,2,"Présentation, tenue compatible avec l’environnement professionnel ");
 INSERT INTO `Libellescomportementsprofessionnels`(`idLibellecomportementprofessionnel`, `ordreComportement`, `libelleComportement`) VALUES (NULL,3,"Adaptation, intégration à l’équipe ");
@@ -166,12 +186,24 @@ INSERT INTO `Libellescomportementsprofessionnels`(`idLibellecomportementprofessi
 INSERT INTO `Libellescomportementsprofessionnels`(`idLibellecomportementprofessionnel`, `ordreComportement`, `libelleComportement`) VALUES (NULL,10,"Respecter les critères qualité de l’entreprise ");
 INSERT INTO `Libellescomportementsprofessionnels`(`idLibellecomportementprofessionnel`, `ordreComportement`, `libelleComportement`) VALUES (NULL,11,"Respect des règles d’hygiène et de sécurité ");
 
-
-
 INSERT INTO `roles` (`idRole`, `libelleRole`) VALUES ('1', 'Administration');	
 INSERT INTO `roles` (`idRole`, `libelleRole`) VALUES ('2', 'Formateur');
 INSERT INTO `roles` (`idRole`, `libelleRole`) VALUES ('3', 'Tuteur');	
 INSERT INTO `roles` (`idRole`, `libelleRole`) VALUES ('4', 'Stagiaire');
+
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (1,"02020",5, '2020-08-30', '2021-04-20');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (2,"36253",1, '2020-08-29', '2021-05-29');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (3,"20124",7, '2020-08-28', '2021-05-28');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (4,"25866",2, '2020-08-27', '2021-05-27');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (5,"14253",6, '2020-08-26', '2021-04-26');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (6,"45721",9, '2020-08-25', '2021-04-25');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (7,"01254",8, '2020-08-24', '2021-04-24');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (8,"12548",3, '2020-08-23', '2021-04-23');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (9,"36526",1, '2020-08-22', '2021-04-22');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (10,"41425",1, '2020-08-21', '2021-04-21');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (11,"23651",1, '2020-08-20', '2021-04-20');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (12,"52412",8, '2020-08-19', '2021-04-19');
+INSERT INTO `sessionsformations` (`idSessionFormation`,`numOffreFormation`,`idFormation`, `dateDebut`, `dateFin`) VALUES (13,"23698",8, '2020-08-18', '2021-04-18');
 
 INSERT INTO `stagiaires` (`idStagiaire`,`genreStagiaire`,`nomStagiaire`,`prenomStagiaire`,`numSecuStagiaire`,`numBenefStagiaire`,`dateNaissanceStagiaire`,`emailStagiaire`, `adresse`, `idVilleHabitation`, `villeNaissance`, `TelStagiaire`) VALUES (1,"M","Carey","Leilani","979875594631213","374216380873751","2021-05-05","toto1@test.fr","rue des champignons",12,"Paris","0123456789");
 INSERT INTO `stagiaires` (`idStagiaire`,`genreStagiaire`,`nomStagiaire`,`prenomStagiaire`,`numSecuStagiaire`,`numBenefStagiaire`,`dateNaissanceStagiaire`,`emailStagiaire`, `adresse`, `idVilleHabitation`, `villeNaissance`, `TelStagiaire`) VALUES (2,"M","George","Cyrus","857493163485533","649458983885388","2021-05-05","toto2@test.fr","rue des champignons",12,"Paris","0101010101");
