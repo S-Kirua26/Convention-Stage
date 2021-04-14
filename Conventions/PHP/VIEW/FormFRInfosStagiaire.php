@@ -33,8 +33,8 @@ echo '<div class="info colonne">
     <div>
     <div class="mini"></div>
         <div class="info colonne center">
-            <label for="numSecu">Numero de securité social :</label>
-            <input type="text" disabled id="numSecu" name="numSecu" value="' .  $stagiaire[0]->getNumSecuStagiaire() . '" >
+            <label for="dateNaissanceStagiaire">Date de naissance :</label>
+            <input type="text" disabled id="dateNaissanceStagiaire" name="dateNaissanceStagiaire" value="' .  formatDate($stagiaire[0]->getDateNaissanceStagiaire()) . '" required>
         </div>
         <div class="mini"></div>
         <div class="info colonne center">
@@ -46,8 +46,8 @@ echo '<div class="info colonne">
     <div>
     <div class="mini"></div>
         <div class="info colonne center">
-            <label for="dateNaissanceStagiaire">Date de naissance :</label>
-            <input type="text" disabled id="dateNaissanceStagiaire" name="dateNaissanceStagiaire" value="' .  formatDate($stagiaire[0]->getDateNaissanceStagiaire()) . '" required>
+            <label for="numSecu">Numero de securité social :</label>
+            <input type="text" disabled id="numSecu" name="numSecu" value="' .  $stagiaire[0]->getNumSecuStagiaire() . '" >
         </div>
         <div class="mini"></div>
         <div class="info colonne center">
