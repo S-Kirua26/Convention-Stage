@@ -2,8 +2,6 @@
 $id=$_POST["idRegion"];
 $type=$_POST["type"];
 
-var_dump("totoTest");
-
 if($type=="D")
 {
     echo json_encode(VillesManager::getListByDepartement($id,true));
@@ -11,7 +9,6 @@ if($type=="D")
 else{
     $listeVille = [];
     $listeDepartement = DepartementsManager::getByRegion($id);
-    var_dump($listeDepartement);
     foreach($listeDepartement as $dept)
     {
         $listeVille = array_merge ($listeVille,VillesManager::getListByDepartement($dept->getIdDepartement(),true));

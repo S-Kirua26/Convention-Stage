@@ -23,7 +23,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="RaisonSociale">Raison Sociale :</label>
                     <?php  
-                        echo '<input verifInput type="text" id="raisonSociale" name="raisonSociale" title="Veuillez renseigner votre raison sociale" value ="'.$entreprise->getRaisonSociale().'" required pattern="[a-zA-Z\ \.-]{3,}"/>';
+                        echo '<input verifInput type="text" id="raisonSociale" name="raisonSociale" title="Veuillez renseigner votre raison sociale" value ="'.$entreprise->getRaisonSociale().'" required pattern="[a-zA-Z ]{3,}"/>';
                     ?>
                     <div id="divRaisonSociale" class="message erreur"></div>
                 </div>
@@ -31,7 +31,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="juridique">Forme Juridique :</label>
                     <?php  
-                        echo '<input verifInput type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z\ \.-]{1,}" value="'.$entreprise->getStatutJuridiqueEnt().'">';
+                        echo '<input verifInput type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z\-.]{1,}" value="'.$entreprise->getStatutJuridiqueEnt().'">';
                     ?>
                     <div id="divFormeJuridique" class="message erreur"></div>
                 </div>
@@ -41,7 +41,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="adresse">Adresse Entreprise:</label>
                     <?php  
-                        echo '<input verifInput type="text" id="adresseEntreprise" name="adresseENT" value="'.$entreprise->getAdresseEnt().'" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z\'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-\ \.]{1,150})$"/>';
+                        echo '<input verifInput type="text" id="adresseEntreprise" name="adresseENT" value="'.$entreprise->getAdresseEnt().'" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z\'àâéèêôùûçÀÂÉÈÔÙÛÇ\s. ]{1,150})$"/>';
                     ?>
                     <div id="divAdresseEntreprise" class="message erreur"></div>
                 </div>
@@ -107,7 +107,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="assureur">Assureur Entreprise:</label>
                     <?php  
-                        echo '<input verifInput type="text" id="assureur" name="assureurENT" value="'.$entreprise->getAssureurEnt().'" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z\ \.-]{3,}" />';
+                        echo '<input verifInput type="text" id="assureur" name="assureurENT" value="'.$entreprise->getAssureurEnt().'" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z\- .]{3,}" />';
                     ?> 
                     <div id="divAssureur" class="message erreur"></div>               
                 </div>
@@ -117,7 +117,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="nomRepresentant">Nom Représentant :</label>
                     <?php  
-                        echo '<input verifInput type="text" id="nomRepresentant" name="nomRepresentant" value="'.$entreprise->getNomRepresentant().'" title="Veuillez renseigner le nom du représentant" required pattern="[a-zA-Z\ -]{2,}"/>';
+                        echo '<input verifInput type="text" id="nomRepresentant" name="nomRepresentant" value="'.$entreprise->getNomRepresentant().'" title="Veuillez renseigner le nom du représentant" required pattern="[a-zA-Z\- ]{2,}"/>';
                     ?> 
                     <div id="divNomRepres" class="message erreur"></div>               
                 </div>
@@ -125,7 +125,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="prenomRepresentant">Prenom Représentant :</label>
                     <?php  
-                        echo '<input verifInput type="text" id="prenomRepresentant" name="prenomRepresentant" value="'.$entreprise->getPrenomRepresentant().'" required title="Veuillez renseigner le prenom du représentant" pattern="[a-zA-Z\ -]{3,}" />';
+                        echo '<input verifInput type="text" id="prenomRepresentant" name="prenomRepresentant" value="'.$entreprise->getPrenomRepresentant().'" required title="Veuillez renseigner le prenom du représentant" pattern="[a-zA-Z\- ]{3,}" />';
                     ?> 
                     <div id="divPrenomRepres" class="message erreur"></div>
                 </div>
@@ -135,7 +135,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="fonction">Fonction Représentant:</label>
                     <?php  
-                        echo '<input verifInput type="text" id="fonctionRepresentant" name="fctRepresentant" value="'.$entreprise->getFctRepresentant().'" required title="Veuillez renseigner la fonction du représentant" pattern="[a-zA-Z\ -]{3,}" />';
+                        echo '<input verifInput type="text" id="fonctionRepresentant" name="fctRepresentant" value="'.$entreprise->getFctRepresentant().'" required title="Veuillez renseigner la fonction du représentant" pattern="[a-zA-Z\- ]{3,}" />';
                     ?>
                     <div id="divFonctionRepresentant" class="message erreur"></div>
                 </div>

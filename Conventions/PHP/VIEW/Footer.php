@@ -11,7 +11,7 @@ if (isset($page))
         case "FormFRStagiaire" : echo '<script src="./JS/VerifFormFRStagiaire.js"></script>
         <script src="./JS/MenuFR.js"></script>'
         ;break;
-        case "FormFREntreprise" : echo '<script src="./JS/VerifFormFREntreprise.js">
+        case "FormFREntreprise" : echo '<script src="./JS/VerifFormEntrepriseFR.js">
         </script><script src="./JS/MenuFR.js"></script>';break;
         case "FormFRInfosStagiaire" : echo '<script src="./JS/MenuFR.js"></script>';break;
         case "FormFRSujetStage" : echo '<script src="./JS/MenuFR.js"></script>';break;
