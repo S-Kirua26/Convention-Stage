@@ -83,7 +83,7 @@ class Formations
 	*/
 	public function toString()
 	{
-		return "IdFormation : ".$this->getIdFormation()."LibelleFormation : ".$this->getLibelleFormation()."\n";
+		return "IdFormation : ".$this->getIdFormation()."LibelleFormation : ".$this->getLibelleFormation()."grn : ".$this->getGrn()."FinaliteFormation : ".$this->getFinaliteFormation()."\n";
 	}
 
 
