@@ -34,8 +34,7 @@ function verifiMdp(e) {
     {
         message.style.display = 'block';
         message.innerHTML = "champ manquant";
-        val[1] = 0;
-        
+        val[1] = 0;  
     }
     validerForm();
 }

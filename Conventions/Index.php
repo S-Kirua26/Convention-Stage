@@ -26,49 +26,23 @@ $routes=[
 	"FormConnexion" => ["PHP/VIEW/", "FormConnexion", "Identification",false],
 	"ActionConnexion" => ["PHP/VIEW/", "ActionConnexion", "Identification",false],
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification",false],
-	"FormAdmin" => ["PHP/VIEW/", "FormAdmin", "Identification",false],
 	
 	/**** MENU ****/
-	"MenuFR" => ["PHP/VIEW/", "MenuFR", "Choisissez la catégorie a compléter :",false],
+	"MenuFR" => ["PHP/VIEW/", "MenuFR", "Veuillez vous connecter",false],
 
 	/**** Fiche de renseignements  ****/
-	"FormFRStagiaire" => ["PHP/VIEW/", "FormFRStagiaire", "Fiche de renseignements",false],
+	"FormFRInfosStagiaire" => ["PHP/VIEW/", "FormFRInfosStagiaire", "Identification",false],
 	"FormFREntreprise" => ["PHP/VIEW/", "FormFREntreprise", "Fiche de renseignements",false],
 	"FormFRTravailRealises" => ["PHP/VIEW/", "FormFRTravailRealises", "Fiche de renseignements",false],
-	"FormFREvaluation" => ["PHP/VIEW/", "FormFREvaluation", "Fiche de renseignements",false],
 	"ActionFormFRStagiaire" => ["PHP/VIEW/", "ActionFormFRStagiaire", "Fiche de renseignements",false],
-	"ActionFormFREntreprise" => ["PHP/VIEW/", "ActionFormFREntreprise", "Fiche de renseignements",false],
-	"ActionFormFRSujetStage" => ["PHP/VIEW/", "ActionFormFRSujetStage", "Fiche de renseignements",false],
-	"ActionFormFRCondition" => ["PHP/VIEW/", "ActionFormFRCondition", "Fiche de renseignements",false],
-	"ActionFormFREvaluation" => ["PHP/VIEW/", "ActionFormFREvaluation", "Fiche de renseignements",false],
-	"ChoixStagiaireTuteur" => ["PHP/VIEW/", "ChoixStagiaireTuteur", "Choisissez le Stagiaire :",false],
-	"FormFRInfosStagiaire" => ["PHP/VIEW/", "FormFRInfosStagiaire", "Identification",false],
-	"ConventionPdf" => ["PHP/VIEW/", "ConventionPdf", "Identification",false],
-	
-	/***** CRUD ****/
-
-	"ListeUtilisateurs" => ["PHP/VIEW/", "ListeUtilisateurs", "Gestion des Utilisateurs",false],
-	"FormUtilisateur" => ["PHP/VIEW/", "FormUtilisateur", "Gestion des Utilisateurs",false],
-	"ActionUtilisateur" => ["PHP/VIEW/", "ActionUtilisateur", "Gestion des Utilisateurs",false],
-
-	"ListeEntreprises" => ["PHP/VIEW/", "ListeEntreprises", "Gestion des Entreprises",false],
-	"FormEntreprise" => ["PHP/VIEW/", "FormEntreprise", "Gestion des Entreprises",false],
 	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Gestion des Entreprises",false],
-
-	"ListeStagiaires" => ["PHP/VIEW/", "ListeStagiaires", "Gestion des Stagiaires",false],
-	"FormStagiaire" => ["PHP/VIEW/", "FormStagiaire", "Gestion des Stagiaires",false],
-	"FormStagiaireMasse" => ["PHP/VIEW/", "FormStagiaireMasse", "Gestion des Stagiaires",false],
-	"ActionStagiaire" => ["PHP/VIEW/", "ActionStagiaire", "Gestion des Stagiaires",false],
-	"ActionStagiaireMasse" => ["PHP/VIEW/", "ActionStagiaireMasse", "Gestion des Stagiaires",false],
+	"ActionFormFREvaluation" => ["PHP/VIEW/", "ActionFormFREvaluation", "Fiche de renseignements",false],
+	"ActionTravailRealises" => ["PHP/VIEW/", "ActionTravailRealises", "Fiche de renseignements",false],
+	"ChoixStagiaireTuteur" => ["PHP/VIEW/", "ChoixStagiaireTuteur", "Choisissez le Stagiaire :",false],
 
 	/**** API ****/
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
 	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Gestion des Entreprises",true],
-	"ListeStagiairesAPI"=>["PHP/MODEL/API/","ListeStagiairesAPI","Accueil",true],
-	"GetObjectifAPI"=>["PHP/MODEL/API/","GetObjectifAPI","Accueil",true],
-	"SetObjectifAPI"=>["PHP/MODEL/API/","SetObjectifAPI","Accueil",true],
-	
-
 ];
 
 if(isset($_GET["page"]))

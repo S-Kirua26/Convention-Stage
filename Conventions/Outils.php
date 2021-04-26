@@ -53,7 +53,6 @@ function afficherPage($page)
             }
         }
 
-        include 'PHP/VIEW/Nav.php';
         include $chemin . $nom . '.php';
         include 'PHP/VIEW/Footer.php';
     }

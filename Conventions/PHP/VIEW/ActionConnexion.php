@@ -7,7 +7,6 @@ $mode = isset($_GET["mode"])? $_GET["mode"]:"login";
 switch ($mode) {
     case 'login':
         if ($uti != false && ($uti->getDatePeremption() == null || new DateTime($uti->getDatePeremption()) > new DateTime("NOW"))) {
-            //echo "motBDD ".$uti->getMdpUtilisateur()."  saisi". $_POST['motDePasse']. "crypte   ".crypte($_POST['motDePasse'])."<br>";
             if ($_POST['motDePasse'] == $uti->getMdpUtilisateur()) {
                 $_SESSION['utilisateur'] = $uti;
                 switch ($uti->getIdRole()) {
