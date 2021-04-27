@@ -13,7 +13,7 @@ echo '<section>
 
                 <div class="elmMenu" id="Evaluation"><a class="centerItem centerSelf double lien" href="index.php?page=FormFREvaluation&idStage=' . $stages->getIdStage() . '">Evaluation</a></div>
 
-                <div class="elmMenu" id="TravailRealises"><a class="centerItem centerSelf double lien" href="index.php?page=FormFRTravailRealises&idStage=' . $stages->getIdStage() . '">Travail Réalisés</a></div>
+                <div class="elmMenu" id="TravailRealises"><a class="centerItem centerSelf double lien" href="index.php?page=FormFRTravailRealises&idStage=' . $stages->getIdStage() . '">Travaux Réalisés</a></div>
             </div>
 
         </section>
