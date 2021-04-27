@@ -1,9 +1,8 @@
 <?php
-
+    $idStage = $_POST["idStage"];
     for ($i=1; $i < 12; $i++) { 
         $valeurs = new ValeursComportementsProfessionnels(["idStage"=>$_POST['idStage'], "idLibelleComportementProfessionnel"=>$_POST['idLibelleComportementProfessionnel'.$i], "valeurComportement"=>$_POST['valeurComportement'.$i]]);
         ValeursComportementsProfessionnelsManager::add($valeurs);
-        var_dump("toto");
     }
 
     $numLigne = 1;
@@ -17,5 +16,5 @@
     $etapeStage->setEtape(5);
     StagesManager::update($etapeStage);
 
-    header("location:Index.php?page=FormFREvaluation");
+    header('location: index.php?page=FormFRTravailRealises&idStage='.$idStage);
 

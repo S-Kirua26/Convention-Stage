@@ -84,9 +84,17 @@ class EntreprisesManager
         $results = $q->fetch(PDO::FETCH_ASSOC);
         if($results != false)
         {
+			// if(!$api) return new Entreprises($results);
+			// return $results;
+			if(!$api){
+				var_dump($results);
+				return new Entreprises($results);
+				
+			}
+			else{
+				return $results;
+			}
 			
-			if(!$api) return new Entreprises($results);
-			return $results;
         }
         else
         {

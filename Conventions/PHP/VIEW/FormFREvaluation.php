@@ -1,6 +1,10 @@
+<?php
+$idStage = $_GET["idStage"];
+?>
 <section>
 
     <form action="index.php?page=ActionFormFREvaluation&mode=ajouter" method="POST">
+    <input type="hidden" name="idStage" value="<?= $idStage;?>">
         <div class="contenu colonne">
             <div class="row">
                 <div class="info colonne titreColonne">

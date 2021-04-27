@@ -27,7 +27,7 @@ $date = date_create_from_format("Y-m-d",$stage->getDateFin());
 $newdate = date_add($date,date_interval_create_from_date_string("15 days"));
 $utilisateur->setDatePeremption($newdate->format("Y-m-d"));
 UtilisateursManager::add($utilisateur);
-header("location:Index.php?page=FormFRStagiaire");
+header("location:Index.php?page=FormFRInfosStagiaire");
 
 
 

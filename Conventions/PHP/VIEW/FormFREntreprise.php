@@ -2,17 +2,19 @@
 <?php
 $id = $_GET["idEntreprise"];
 $entreprise = EntreprisesManager::findById($id);
+$idStage = $_GET["idStage"];
 if($entreprise==null) $entreprise= new Entreprises();
 ?> 
     <form action="index.php?page=ActionEntreprise&mode=ajouter" method="POST">
         <fieldset>
             <legend>Entreprise</legend>
+            <input type="hidden" name="idStage" value="<?= $idStage;?>">
             <div class="row">
             <div class="demi"></div>
                 <div class="info colonne">
                     <label for="numSiret">Numéro SIRET :</label>
                     <?php  
-                        echo '<input verifInput type="text" id="siret" name="numSiretENT" title="Veuillez renseigner un numero de SIRET" value="'.$entreprise->getNumSiretEnt().'" required pattern="\d{14}">';
+                        echo '<input verifInput type="text" id="siret" name="numSiretEnt" title="Veuillez renseigner un numero de SIRET" value="'.$entreprise->getNumSiretEnt().'" required pattern="\d{14}">';
                     ?>
                     <div id="divSiret" class="message erreur"></div>
                 </div>
@@ -31,7 +33,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="juridique">Forme Juridique :</label>
                     <?php  
-                        echo '<input verifInput type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z\-.]{1,}" value="'.$entreprise->getStatutJuridiqueEnt().'">';
+                        echo '<input verifInput type="text" id="formeJuridique" name="statutJuridiqueEnt" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z\-.]{1,}" value="'.$entreprise->getStatutJuridiqueEnt().'">';
                     ?>
                     <div id="divFormeJuridique" class="message erreur"></div>
                 </div>
@@ -41,7 +43,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="adresse">Adresse Entreprise:</label>
                     <?php  
-                        echo '<input verifInput type="text" id="adresseEntreprise" name="adresseENT" value="'.$entreprise->getAdresseEnt().'" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z\'àâéèêôùûçÀÂÉÈÔÙÛÇ\s. ]{1,150})$"/>';
+                        echo '<input verifInput type="text" id="adresseEntreprise" name="adresseEnt" value="'.$entreprise->getAdresseEnt().'" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z\'àâéèêôùûçÀÂÉÈÔÙÛÇ\s. ]{1,150})$"/>';
                     ?>
                     <div id="divAdresseEntreprise" class="message erreur"></div>
                 </div>
@@ -89,7 +91,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="numeroTelephone">Numéro Téléphone Entreprise:</label>
                     <?php  
-                        echo '<input verifInput type="text" id="numeroTelEnt" name="telENT" value="'.$entreprise->getTelEnt().'" required title="Veuillez renseigner un numero de telephone de l\'entreprise" pattern="\d{10}"/>';
+                        echo '<input verifInput type="text" id="numeroTelEnt" name="telEnt" value="'.$entreprise->getTelEnt().'" required title="Veuillez renseigner un numero de telephone de l\'entreprise" pattern="\d{10}"/>';
                     ?>
                     <div id="divNumTelephoneEnt" class="message erreur"></div>
                 </div>
@@ -107,7 +109,7 @@ if($entreprise==null) $entreprise= new Entreprises();
                 <div class="info colonne">
                     <label for="assureur">Assureur Entreprise:</label>
                     <?php  
-                        echo '<input verifInput type="text" id="assureur" name="assureurENT" value="'.$entreprise->getAssureurEnt().'" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z\- .]{3,}" />';
+                        echo '<input verifInput type="text" id="assureur" name="assureurEnt" value="'.$entreprise->getAssureurEnt().'" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z\- .]{3,}" />';
                     ?> 
                     <div id="divAssureur" class="message erreur"></div>               
                 </div>

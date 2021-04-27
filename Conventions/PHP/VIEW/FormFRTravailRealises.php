@@ -5,17 +5,16 @@
 
 <section>
 
-    <form action="index.php?page=ActionFormFRTravailRealises" method="POST">
-
+    <form action="index.php?page=ActionTravailRealises" method="POST">
         <div class="info colonne">
-            <label for="sujetStage">Travail Réalisés</label>
-            <textarea type="text" require id="travailRealises" value="travailRealises" name="travailRealises" pattern="[a-zA-Z- ]"></textarea>
+            <label for="sujetStage">Travaux Réalisés</label>
+            <textarea type="text" require id="travauxRealises" value="<?php echo($stage->getTravauxRealises()) ?>" name="travauxRealises" pattern="[a-zA-Z- ]"></textarea>
         </div>
 
         <div class="row">
             <div></div>
             <div class="info colonne">
-                <button class="bouton" type="submit"><i class="far fa-check-circle"></i> Valider</button>
+                <button class="bouton" type="submit"><i class="far fa-check-circle"></i>Valider</button>
             </div>
             <div></div>
         </div>

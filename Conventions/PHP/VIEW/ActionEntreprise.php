@@ -1,6 +1,6 @@
 <?php
-
-$entreprise = EntreprisesManager::getByNumSiret($_POST["numSiretENT"],false);
+$idStage = $_POST["idStage"];
+$entreprise = EntreprisesManager::getByNumSiret($_POST["numSiretEnt"],false);
 if($entreprise == null) // si l'entreprise n'est pas créée alors on l'a créee
 {
     $entreprise = new Entreprises($_POST);
@@ -13,6 +13,7 @@ else{ // si elle est créée alors on la modifie si il y a à modifier
     $entreprise->setIdEntreprise($idEntreprise);
     EntreprisesManager::update($entreprise);
 }
+header('location: index.php?page=FormFREvaluation&idStage='.$idStage);
     
 
 

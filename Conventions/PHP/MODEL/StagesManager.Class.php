@@ -21,7 +21,7 @@ class StagesManager
     public static function update(Stages $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("UPDATE Stages SET idStage=:idStage,etape=:etape,dateVisite=:dateVisite,nomVisiteur=:nomVisiteur,lieuRealisation=:lieuRealisation,deplacement=:deplacement,frequenceDeplacement=:frequenceDeplacement,modeDeplacement=:modeDeplacement,attFormReglement=:attFormReglement,libelleAttFormReg=:libelleAttFormReg,visiteMedical=:visiteMedical,travauxDang=:travauxDang,dateDeclarationDerog=:dateDeclarationDerog,sujetStage=:sujetStage,travauxRealises=:travauxRealises,objectifPAE=:objectifPAE,dateDebut=:dateDebut,dateFin=:dateFin,idTuteur=:idTuteur,idStagiaire=:idStagiaire,idPeriode=:idPeriode WHERE idStage=:idStage");
+        $q = $db->prepare("UPDATE Stages SET idStage=:idStage,etape=:etape,dateVisite=:dateVisite,nomVisiteur=:nomVisiteur,travauxRealises=:travauxRealises,objectifPAE=:objectifPAE,dateDebut=:dateDebut,dateFin=:dateFin,idTuteur=:idTuteur,idStagiaire=:idStagiaire WHERE idStage=:idStage");
         $q->bindValue(":idStage", $obj->getIdStage());
         $q->bindValue(":etape", $obj->getEtape());
         $q->bindValue(":dateVisite", $obj->getDateVisite());

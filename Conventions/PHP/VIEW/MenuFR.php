@@ -1,5 +1,4 @@
 <?php
-// $idStagiaire = $_GET['']
 $idStage = $_GET['idStage'];
 $stages = StagesManager::findById($idStage);
 $tuteur = TuteursManager::findById($stages->getIdTuteur());
