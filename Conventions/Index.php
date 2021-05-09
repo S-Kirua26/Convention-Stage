@@ -31,19 +31,19 @@ $routes=[
 	"MenuFR" => ["PHP/VIEW/", "MenuFR", "Veuillez vous connecter",false],
 
 	/**** Fiche de renseignements  ****/
-	"FormFRInfosStagiaire" => ["PHP/VIEW/", "FormFRInfosStagiaire", "Identification",false],
-	"FormFREntreprise" => ["PHP/VIEW/", "FormFREntreprise", "Fiche de renseignements",false],
-	"FormFREvaluation" => ["PHP/VIEW/", "FormFREvaluation", "Fiche de renseignements",false],
-	"FormFRTravailRealises" => ["PHP/VIEW/", "FormFRTravailRealises", "Fiche de renseignements",false],
-	"ActionFormFRStagiaire" => ["PHP/VIEW/", "ActionFormFRStagiaire", "Fiche de renseignements",false],
-	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Gestion des Entreprises",false],
-	"ActionFormFREvaluation" => ["PHP/VIEW/", "ActionFormFREvaluation", "Fiche de renseignements",false],
-	"ActionTravailRealises" => ["PHP/VIEW/", "ActionTravailRealises", "Fiche de renseignements",false],
+	"FormFRInfosStagiaire" => ["PHP/VIEW/", "FormFRInfosStagiaire", "Info du Stagiaire",false],
+	"FormFREntreprise" => ["PHP/VIEW/", "FormFREntreprise", "Info Entreprise",false],
+	"FormFREvaluation" => ["PHP/VIEW/", "FormFREvaluation", "Info Evaluation",false],
+	"FormFRTravailRealises" => ["PHP/VIEW/", "FormFRTravailRealises", "Travaux Realises",false],
+	"ActionFormFRStagiaire" => ["PHP/VIEW/", "ActionFormFRStagiaire", "Action Stagiaire",false],
+	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Action Entreprise",false],
+	"ActionFormFREvaluation" => ["PHP/VIEW/", "ActionFormFREvaluation", "Action Evaluation",false],
+	"ActionTravailRealises" => ["PHP/VIEW/", "ActionTravailRealises", "Action Travaux Realises",false],
 	"ChoixStagiaireTuteur" => ["PHP/VIEW/", "ChoixStagiaireTuteur", "Choisissez le Stagiaire :",false],
 
 	/**** API ****/
-	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
-	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Gestion des Entreprises",true],
+	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Villes",true],
+	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Numero Siret",true],
 ];
 
 if(isset($_GET["page"]))

@@ -57,7 +57,7 @@ function creerLigne(nb) {
     libelleAcquis.setAttribute("aVerifier", "ok" );
     libelleAcquis.addEventListener("input",verification);
     libelleA.appendChild(libelleAcquis);
-
+    
     
 
     // inputs type radio
